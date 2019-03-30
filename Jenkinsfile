@@ -1,15 +1,17 @@
-#!/bin/bash
+Jenkinsfile (Declarative Pipeline)
+pipeline {
+    agent any
 
-useradd jenkins -m
-docker run \
-  -u jenkins \
-  --rm \
-  -d \
-  -p 8080:8080 \
-  -p 50000:50000 \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -v /home/jenkins:/var/jenkins_home \
-  jenkins/jenkins:lts
-cat /home/jenkins/secrets/initialAdminPassword
-
-© 2019 GitHub, Inc.
+    stages {
+        stage('Deploy') {
+            when {
+              expression {
+                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
+              }
+            }
+            steps {
+                sh 'make publish'
+            }
+        }
+    }
+}
