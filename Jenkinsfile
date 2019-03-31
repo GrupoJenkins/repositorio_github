@@ -11,4 +11,11 @@ pipeline {
             }
         }
     }
+    stages {
+        stage('Compilar Java') {
+            steps {
+                javac Operaciones.java
+            }
+        }
+    }
 }
