@@ -8,12 +8,6 @@ pipeline {
             steps {
                 echo "${params.Greeting} World!"
                 echo "${params.Greeting} Mundo mundial!"
-            }
-        }
-    }
-    stages {
-        stage('Compilar Java') {
-            steps {
                 javac Operaciones.java
             }
         }
