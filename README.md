@@ -1,4 +1,4 @@
 #!/bin/bash
 
 
-© 2019 GitHub, Inc.
+© 2019 GitHub
