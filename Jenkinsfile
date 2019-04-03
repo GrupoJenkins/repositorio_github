@@ -7,7 +7,7 @@ pipeline {
     skipDefaultCheckout(true)
     }
     stages {
-        stage('Compilar') {
+        stage('Build') {
             steps {
                 echo "${params.Greeting} World!"
                 echo "${params.Greeting} Mundo mundial!"
